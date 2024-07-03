@@ -4,8 +4,11 @@
 #define ECHO_PIN 3
 #define BUZZER_PIN 21
 
-int buzzerState = LOW;    // Menyimpan status buzzer (LOW = mati, HIGH = hidup)
+bool buzzerState = LOW;    // Menyimpan status buzzer (LOW = mati, HIGH = hidup)
 int lastDistance = 0;     // Menyimpan jarak terakhir yang terdeteksi
+  long duration;
+  int distance;
+
 
 void setup() {
   pinMode(TRIG_PIN, OUTPUT);
@@ -16,8 +19,6 @@ void setup() {
 }
 
 void loop() {
-  long duration;
-  int distance;
 
   // Memastikan pin TRIG rendah
   digitalWrite(TRIG_PIN, LOW);
@@ -51,3 +52,5 @@ void loop() {
 
   delay(100);  // Tunggu sebentar sebelum mengukur lagi
 }
+
+// yang dimana saat sensor ultrasonik mendeteksi adanya benda pada jarak 10cm sensor maka piezo buzzer akan berbunyi layak nya suatu trigger dan tidak berhenti berbunyi hingga sensor di trigger lagi pada jarak yang sama, seperti layaknya suatu toggle dimana saat benda melewati sensor maka itu trigger pertama yang menyebabkan buzzer berbunyi kalaupun benda itu sudah menghilang dari jarak yang di tentukan buzzer akan tetap berbunyi, dan setelah benda melewati sensor untuk kedua kalinya itu adalah trigger kedua yang berfungsi untuk mematikan buzzer agar tidak berbunyi.

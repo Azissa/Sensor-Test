@@ -29,8 +29,6 @@ I programmed this using VSCode with the PlatformIO extension, [here](https://doc
    - One pin of the piezo buzzer connected to ground.
    - The other pin connected to a GPIO on ESP32-C3 (e.g., GPIO 13).
 
-I programmed this using VSCode with the PlatformIO extension, [here](https://docs.platformio.org/en/latest/integration/ide/vscode.html) if you want to see the documentation.
-
 ## Program Code
 
 ```cpp
